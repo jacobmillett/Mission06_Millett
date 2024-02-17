@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model EnterNewMovie
+<div class="text-center">
+    <h2>Fill out this form and submit it to add a new movie to the databse:</h2>
+    <form method= "post">
+        <label asp-for="Title">What is the movie Title?:</label>
+        <input asp-for="Title"/>
+        <br />
+        <label asp-for="Category">What is the movie category?:</label>
+        <input asp-for="Category"/>
+        <br />
+        <label asp-for="Year">In what year was the movie produced?:</label>
+        <input asp-for="Year"/>
+        <br />
+         <label asp-for="Director">Who directed this movie?:</label>
+        <input asp-for="Director"/>
+        <br />
+        <label asp-for="Rating">What is this movie rated?:</label>
+        <select asp-for="Rating">
+            <option>G</option>
+            <option>PG</option>
+            <option>PG-13</option>
+            <option>R</option>
+        </select>
+        <br />
+        <label asp-for="Edited">Has this version been edited?:</label>
+        <select asp-for="Edited">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+        <br />
+        <label asp-for="Lent">Who was this movie lent to?:</label>
+        <input asp-for="Lent"/>
+        <br />
+        <label asp-for="Notes">What notes would you like to add for this movie?:</label>
+        <input asp-for="Notes" type="text" maxlength="25">
+        <br />
+        <button type="submit">Submit</button>
+    </form>
+    <br />
+
+</div>

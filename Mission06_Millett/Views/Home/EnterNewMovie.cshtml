@@ -7,14 +7,22 @@
 <div class="text-center">
     <h2>Fill out this form and submit it to add a new movie to the databse:</h2>
     <form method= "post">
+        
+        <input type = "hidden" asp-for="MovieId" />
+
         <label asp-for="Title">What is the movie Title?:</label>
         <input asp-for="Title"/>
         <br />
-        <label asp-for="Category">What is the movie category?:</label>
-        <input asp-for="Category"/>
+        <select asp-for="CategoryId">
+            <option value="">Select a category</option>
+            @foreach (Category c in ViewBag.Categories)
+            {
+                <option value="@c.CategoryId">@c.CategoryName</option>
+            }
+        </select>
         <br />
         <label asp-for="Year">In what year was the movie produced?:</label>
-        <input asp-for="Year"/>
+        <input min="1888" asp-for="Year"/>
         <br />
          <label asp-for="Director">Who directed this movie?:</label>
         <input asp-for="Director"/>
@@ -33,8 +41,15 @@
             <option value="false">No</option>
         </select>
         <br />
-        <label asp-for="Lent">Who was this movie lent to?:</label>
-        <input asp-for="Lent"/>
+        <label asp-for="LentTo">Who was this movie lent to?:</label>
+        <input asp-for="LentTo"/>
+        <br /> 
+        
+        <label asp-for="CopiedToPlex">Was this movie copied to plex?:</label>
+        <select asp-for="CopiedToPlex">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
         <br />
         <label asp-for="Notes">What notes would you like to add for this movie?:</label>
         <input asp-for="Notes" type="text" maxlength="25">

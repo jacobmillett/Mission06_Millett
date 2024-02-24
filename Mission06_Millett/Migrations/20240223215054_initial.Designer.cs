@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Mission06_Millett.Models;
 
@@ -10,9 +11,11 @@ using Mission06_Millett.Models;
 namespace Mission06_Millett.Migrations
 {
     [DbContext(typeof(EnterNewMovieContext))]
-    partial class EnterNewMovieContextModelSnapshot : ModelSnapshot
+    [Migration("20240223215054_initial")]
+    partial class initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.2");
